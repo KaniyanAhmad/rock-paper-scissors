@@ -1,0 +1,105 @@
+/* index.html */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+}
+
+#homeContainer {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homeContainer div:nth-child(2) {
+    margin-top: 50px;
+}
+
+#homeBtn {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mainBtn {
+    width: 300px;
+    height: 70px;
+    background-color: gray;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.sound-help {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+    
+}
+
+.sound {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: gray;
+    margin-top: 20px;
+}
+
+.footer > span {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.footer > span > a {
+    text-decoration: none;
+    color: white;
+}
+/* ----------------------------------------------------------------------------------- */
+/* game.html */
+
+
+
+/* ----------------------------------------------------------------------------------- */
+/* theme.html */
+
+
+
+/* ----------------------------------------------------------------------------------- */
