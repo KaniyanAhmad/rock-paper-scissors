@@ -19,8 +19,18 @@ body{
 }
 
 #score {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     width: 150px;
-    height: 150px;  
+    height: 150px;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 40px; 
+}
+
+#scoreContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 #score, #playerCharacter, #computerCharacter {          /* temp */
@@ -34,6 +44,11 @@ body{
     border-radius: 20px;
     width: 356px;
     height: 322px;
+}
+
+.img {
+    width: 300px;
+    height: 270px;
 }
 
 #playerSelection {
