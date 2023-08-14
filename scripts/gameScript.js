@@ -20,7 +20,6 @@ function getComputerChoice() {
     return choice[randomChoice];
 }
 
-
 function game(playerSelection,computerSelection) {
     if(playerSelection == computerSelection){
         console.log("Draw! Play Again");
@@ -48,7 +47,6 @@ function game(playerSelection,computerSelection) {
 
 
 }
-
 
 function imgEmbedPlayer(choice) {
     const selectionWindow = document.getElementById('playerCharacter');
@@ -150,6 +148,17 @@ function result() {
         console.log('You Won');
     } 
 }
+
+function popup() {
+    const popupWrapperContainer = document.getElementById('popupWrapperContainer');
+    const popupWrapper = document.getElementById('popupWrapper');
+
+    popupWrapperContainer.style.display = 'flex';
+    
+}
+
+// popup();
+
 
 playerRock.addEventListener('click', function() {
     playerSelection = 'rock';
