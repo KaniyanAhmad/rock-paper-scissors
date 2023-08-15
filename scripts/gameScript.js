@@ -4,7 +4,7 @@ let computerScore = 0;
 let playerScore = 0;
 let playerSelection = '';
 let round = 0;
-let temp = '';
+let userComment = '';
 
 
 const playerRock = document.getElementById("rock");
@@ -79,18 +79,18 @@ function imgRemove() {
 
 function click(){
     let computerSelection = getComputerChoice();
-    temp = computerSelection;
+    userComment = computerSelection;
     imgRemove();
-    imgEmbedPlayer(playerSelection); // Re-embed the player's choice
-    imgEmbedComputer(computerSelection); // Re-embed the computer's choice
+    imgEmbedPlayer(playerSelection); 
+    imgEmbedComputer(computerSelection); 
     game(playerSelection, computerSelection);
     scoreRemove();
     score();
     console.log(computerSelection);
     console.log(round);
 
-    if (round === 5 )
-        result();
+    if (computerScore === 5 || playerScore === 5)
+        endScreen();
 }
 
 function scoreRemove() {
@@ -131,33 +131,45 @@ function score() {
 
     const commentContainer = document.getElementById('scoreComment');
     const scoreComment = document.createElement('p');
-    scoreComment.textContent = 'Tie';
-    if (playerSelection === temp) {
+    
+    if (playerSelection === userComment) {
+        scoreComment.textContent = 'TIE';
         commentContainer.appendChild(scoreComment);
-    } else {
-        scoreComment.textContent = '----'
-        commentContainer.appendChild(scoreComment);
-    }
-}
-
-
-function result() {
-    if(computerScore > playerScore) {
-        console.log('Computer Won');
-    } else if (playerScore > computerScore) {
-        console.log('You Won');
     } 
+
+    // else if (playerScore > computerScore) {
+    //     scoreComment.textContent = 'YOU WON'
+    //     commentContainer.appendChild(scoreComment);
+    // } else if (playerScore < computerScore) {
+    //     scoreComment.textContent = 'COMPUTER WON'
+    //     commentContainer.appendChild(scoreComment);
+    // }
+
+
 }
 
-function popup() {
+
+
+
+function endScreen() {
     const popupWrapperContainer = document.getElementById('popupWrapperContainer');
-    const popupWrapper = document.getElementById('popupWrapper');
+    const popupImg = document.getElementById('popupImg');
+
+    const img = document.createElement('img');
+    if (computerScore > playerScore) {
+        img.src = '../images/computerEndScreen.png';
+    } else if (computerScore < playerScore) {
+        img.src = '../images/userEndScreen.png';
+    }
 
     popupWrapperContainer.style.display = 'flex';
-    
+
+    popupImg.appendChild(img);
+
+
 }
 
-// popup();
+// endScreen();
 
 
 playerRock.addEventListener('click', function() {
