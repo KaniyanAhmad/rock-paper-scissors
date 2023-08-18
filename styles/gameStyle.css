@@ -2,11 +2,12 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body{
     
-    background-color: #333333;
+    background-color: #424242;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 700;
 }
@@ -42,19 +43,11 @@ body{
 }
 
 #playerCharacter, #computerCharacter {
-    background: rgb(51,51,51);
-    background: linear-gradient(0deg, rgba(51,51,51,1) 9%, rgba(217,217,217,1) 87%);
-    border-radius: 20px;
+    border-radius: 50px;
+    background: #424242;
+    box-shadow: inset 22px 22px 44px #383838, inset -22px -22px 44px #4c4c4c;
     width: 356px;
     height: 322px;
-}
-
-#playerCharacter {
-    border: 5px solid #03B5AA;
-}
-
-#computerCharacter {
-    border: 5px solid #E63B2E;
 }
 
 .img {
@@ -69,9 +62,9 @@ body{
 }
 
 #playerSelection > * {      
-    border: 5px solid #03B5AA;                            
-    background: rgb(51,51,51);
-    background: linear-gradient(0deg, rgba(51,51,51,1) 9%, rgba(217,217,217,1) 87%);
+    border-radius: 10px;
+    background: #424242;
+    box-shadow: inset 22px 22px 44px #383838, inset -22px -22px 44px #4c4c4c;
     border-radius: 20px;
     width: 143px;
     height: 143px;
@@ -90,6 +83,7 @@ body{
 
 .sound-help > * {
     background-color: #FCA311;
+    user-select: none;
 }
 
 
@@ -121,8 +115,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 43px;
-    background-color: gray;
+    height: 53px;
+    background-color: #4c4c4c;
     margin-top: 20px;
 }
 
@@ -153,7 +147,7 @@ footer {
 }
 
 #popupWrapper {
-    background-color: rgba(68, 67, 55, 0.87);
+    background-color: rgba(66, 66, 66, 0.87);
     width: 730px;
     height: 440px;
     border-radius: 20px;
@@ -182,8 +176,9 @@ footer {
     width: 140px;
     height: 70px;
     border-radius: 10px;
-    background-color: #43AA8B;
-    border-color: rgba(255, 255, 255, 0);
+    background-color: #424242;
+    box-shadow:  25px 25px 50px #383838, -25px -25px 50px #4c4c4c;
+    border-color: transparent;
     color: white;
     font-size: 15px;
     font-weight: 700;

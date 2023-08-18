@@ -157,8 +157,10 @@ function endScreen() {
 
     const img = document.createElement('img');
     if (computerScore > playerScore) {
+        audio('userDefeat');
         img.src = '../images/computerEndScreen.png';
     } else if (computerScore < playerScore) {
+        audio('userWon');
         img.src = '../images/userEndScreen.png';
     }
 
@@ -169,22 +171,89 @@ function endScreen() {
 
 }
 
-// endScreen();
-
-
 playerRock.addEventListener('click', function() {
     playerSelection = 'rock';
     imgEmbedPlayer('rock');
     click();
+    audio('playerSelection');
 });
 playerPaper.addEventListener('click', function() {
     playerSelection = 'paper';
     imgEmbedPlayer('paper');
     click();
+    audio('playerSelection');
 });
 playerScissors.addEventListener('click', function() {
     playerSelection = 'scissors';
     imgEmbedPlayer('scissors');
     click();
+    audio('playerSelection');
 });
 
+
+//Popup's
+const playAgainBtn = document.querySelector('#popupPlayAgain > a > button');
+
+playAgainBtn.onclick = function () {
+    playAgainBtn.style.boxShadow = 'inset 25px 25px 50px #383838, inset -25px -25px 50px #4c4c4c';
+    audio('playAgain');
+}
+
+const mainMenuBtn = document.querySelector('#popupMenu > a > button');
+
+mainMenuBtn.onclick = function () {
+    mainMenuBtn.style.boxShadow = 'inset 25px 25px 50px #383838, inset -25px -25px 50px #4c4c4c';
+    audio('mainMenu');
+}
+
+//Sound Mute/notMute Button
+const sound = document.querySelector('.sound');
+const soundImg = document.querySelector('.sound > img');
+
+sound.onclick = function () {
+    if (soundImg.alt === 'notMuted') {
+        soundImg.src = '../images/volume-mute.png';
+        soundImg.alt = 'muted';
+    } else {          
+        soundImg.src = '../images/volume.png';
+        soundImg.alt = 'notMuted';
+    }
+}
+
+//Sounds
+function audio(choice) {
+ const playerSelectionAudio = document.querySelector('#selection');
+ const userWon = document.querySelector('#userWon');
+ const userDefeat = document.querySelector('#userDefeat');
+ const btn = document.querySelector('#btn');
+ const soundImg = document.querySelector('.sound > img');
+
+ 
+ if (soundImg.alt === 'notMuted') {
+    if (choice === 'playerSelection') {
+        if(!playerSelectionAudio) return;
+        playerSelectionAudio.currentTime = 0;
+        playerSelectionAudio.play()
+    }
+
+    if (choice === 'userWon') {
+        if(!userWon) return;
+        userWon.play();
+    } else if (choice === 'userDefeat') {
+        if(!userDefeat) return;
+        userDefeat.play();
+    }
+
+    if (choice === 'playAgain') {
+        btn.play();
+        btn.addEventListener('ended', function () {
+        location.href = './game.html';
+        });
+    } else if (choice === 'mainMenu') {
+        btn.play();
+        btn.addEventListener('ended', function () {
+        location.href = '../index.html';
+        });
+    }
+ }
+}
