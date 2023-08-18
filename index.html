@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="./style.css" rel="stylesheet">
-    <script src="./javascript.js"></script>
+    <script src="./javascript.js" defer></script>
+    
     <title>Interdimensional R-P-S</title>
 </head>
 <body>
@@ -22,19 +23,19 @@
     <div id="homeContainer">
         <div id="logo">
             <!-- Logo -->
+            Rock Paper Scissors
         </div>
 
-        <div>
-            <div id="homeBtn">
+        <div id="homeBtn">
             <!-- New Game -->
-            <a href="./pages/game.html">
-                <button class="mainBtn">New Game</button>
-            </a>
-            <!-- Theme -->
-            <a href="./pages/theme.html">
-                <button class="mainBtn">Theme</button>
-            </a>
+            <div>
+                <button class="mainBtn newGame">New Game</button>
             </div>
+            <!-- Theme -->
+            <div>
+                <button class="mainBtn theme" >Theme</button>
+            </div>
+            
         </div>
     </div>
 
@@ -43,9 +44,13 @@
         <footer>
             <div class="sound-help">
                 <!-- Sound -->
-                    <div class="sound"><p>?</p></div>
+                    <div class="sound">
+                        <img src="./images/volume.png" alt="notMuted"/>
+                    </div>
                 <!-- How to -->
-                    <div class="help"><p>?</p></div>
+                    <div class="help">
+                        <p>?</p>
+                    </div>
             </div>
             <!-- Github Link -->
             <div class="footer">
@@ -57,5 +62,17 @@
             </div>
 
         </footer>
+        
+        <div id="infoWrapperContainer">
+            <div id="infoWrapper">
+                <div id="info">
+                    <p>Rock beats scissors, scissors beats paper, and paper beats rock. Try to outsmart your opponent and achieve the highest score! <br> More info will be added soon with some neew themes and characters....</p>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <audio src="../sounds/btn.mp3" id="btn"></audio>
 </body>
 </html>

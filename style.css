@@ -2,13 +2,12 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 
 body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #333333;
+    background-color: #424242;
 }
 
 #homeContainer {
@@ -18,25 +17,30 @@ body{
     align-items: center;
 }
 
-#homeContainer div:nth-child(2) {
-    margin-top: 50px;
+#logo {
+    color: #424242;
+    font-weight: 900;
+    font-size: 100px;
+    text-shadow: 8px 8px 12px #383838, -8px -8px 12px #4c4c4c;
+    outline: none;
 }
 
 #homeBtn {
-    height: 100px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 26px;
 }
 
 .mainBtn {
     width: 300px;
     height: 70px;
-    background-color: #43AA8B;
+    border-radius: 50px;
+    background-color: #424242;
+    box-shadow:  25px 25px 50px #383838, -25px -25px 50px #4c4c4c;
     border-color: rgba(255, 255, 255, 0);
-    border-radius: 20px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .sound-help {
@@ -69,10 +73,41 @@ body{
     align-items: center;
 }
 
+#infoWrapperContainer {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#infoWrapper {
+    background-color: #424242;
+    border-radius: 20px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoWrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
-    margin-top: auto;
+    margin-top: 235px;
 }
 
 .footer {
@@ -80,7 +115,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: gray;
+    background-color: #4c4c4c;
     margin-top: 20px;
 }
 
@@ -95,12 +130,3 @@ footer {
     text-decoration: none;
     color: white;
 }
-/* ----------------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------------- */
-/* theme.html */
-
-
-
-/* ----------------------------------------------------------------------------------- */
