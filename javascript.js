@@ -5,9 +5,22 @@ const newGameBtn = document.querySelector('.newGame');
 
 newGameBtn.onclick = function () {
     newGameBtn.style.boxShadow = 'inset 25px 25px 50px #383838, inset -25px -25px 50px #4c4c4c';
-    audio('btn');
+    
+    audio('newGame');
+    btnAudio.addEventListener('ended', function () {
+        gotoPage('game');
+    });
+
+    if (soundImg.alt === 'muted')
+        gotoPage('game');
+    
+    
 }
 
+function gotoPage (choice) {
+    if (choice === 'game')
+        location.href = './pages/game.html'
+}
 //Sound Mute/notMute btn
 
 const sound = document.querySelector('.sound');
@@ -25,15 +38,28 @@ sound.onclick = function () {
 
 //audio 
 function audio(choice) {
- const btn = document.querySelector('#btn');
+const btnAudio = document.querySelector('#btnAudio');
 
-    if (choice === 'btn') {
-        btn.play();
-        btn.addEventListener('ended', function () {
-        location.href = './pages/game.html';
-        });
+if (soundImg.alt === 'notMuted') {
+    if (choice === 'newGame') {
+        btnAudio.play();
+        
     }
 }
-
+}
 
 //info popup
+const infoBtn = document.querySelector('.help');
+const infoWrapperContainer = document.querySelector('#infoWrapperContainer');
+
+infoBtn.addEventListener('mouseover', 
+    function () {
+        infoWrapperContainer.style.display = 'flex';
+    }
+);
+
+infoBtn.addEventListener('mouseout', 
+    function () {
+        infoWrapperContainer.style.display = 'none';
+    }
+);
