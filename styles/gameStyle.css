@@ -183,3 +183,38 @@ footer {
     font-size: 15px;
     font-weight: 700;
 }
+
+#infoWrapperContainer {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#infoWrapper {
+    background-color: #424242;
+    border-radius: 20px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoWrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+    color: white;
+    font-size: 20px;
+    width: 700px;
+    height: 300px;
+}

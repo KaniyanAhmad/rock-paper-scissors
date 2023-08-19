@@ -257,3 +257,19 @@ function audio(choice) {
     }
  }
 }
+
+//info popup
+const infoBtn = document.querySelector('.help');
+const infoWrapperContainer = document.querySelector('#infoWrapperContainer');
+
+infoBtn.addEventListener('mouseover', 
+    function () {
+        infoWrapperContainer.style.display = 'flex';
+    }
+);
+
+infoBtn.addEventListener('mouseout', 
+    function () {
+        infoWrapperContainer.style.display = 'none';
+    }
+);
